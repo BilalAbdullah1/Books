@@ -1,0 +1,31 @@
+﻿@model IEnumerable<newworking.Models.Genre>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h2 class="display-5">Genre Details</h2>
+    <br />
+    <a asp-action="Create" asp-controller="Home">Add Genre</a>
+    <br />
+    <br />
+    <table class="table table-bordered">
+        <tr>
+            @*  <th>@Html.DisplayNameFor(md=> md.CId)</th>
+            <th>@Html.DisplayNameFor(md=>md.CName)</th> *@
+            <th>ID</th>
+            <th>Name</th>
+            <th colspan="2">Actions</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.GId</td>
+                <td>@item.GName</td>
+                <td><a asp-action="Edit" asp-route-id=@item.GId>Edit</a> </td>
+                <td><a asp-action="Delete" asp-route-id=@item.GName>Delete</a></td>
+            </tr>
+        }
+    </table>
+</div>

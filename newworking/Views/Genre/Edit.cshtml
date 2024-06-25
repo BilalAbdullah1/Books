@@ -1,0 +1,26 @@
+﻿@model newworking.Models.Genre
+@{
+    ViewData["Title"] = "Edit Page";
+}
+<a asp-action="Index" asp-controller="Home">Go Back</a>
+<br />
+<br />
+<div>
+    <h2 class="display-5">Edit Genre</h2>
+    <br />
+</div>
+
+
+<div class="row">
+    <div class="col-lg-4">
+        <form asp-action="Edit">
+            <input type="hidden" asp-for="GId" />
+            <p>
+                <b><label asp-for="GName" class="form-label"></label> </b>
+                <input asp-for="GName" class="form-control" />
+                <span asp-validation-for="GName" class="text-danger"></span>
+            </p>
+            <p><button type="submit" class="btn btn-primary">Save Changes</button></p>
+        </form>
+    </div>
+</div>
